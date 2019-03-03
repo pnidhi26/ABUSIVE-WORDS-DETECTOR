@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NLTK_Noobs</title>
+    <meta charset="utf-8">
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+  
+  #section1 {padding-top:00px;height:300px;color: #fff; background-color: #000000;}
+ /* textarea {
+  width: 100px;
+  height: 150px;
+}*/
+.paddingcol{
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+</style>
+
+</head>
+<body>
+
+  <nav style="margin-bottom:0px;" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+    <button class="btn btn-success navbar-btn "><a href="#section1">Try it Now!</button>
+    </ul>
+  </div>
+</nav>
+
+ <!--  <div class="container"> 
+<video class="responsive-video" controls>
+    <source src="{{url_for('static', filename='image/movie.mp4')}}" type="video/mp4" />
+  </video>
+</div> -->
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{url_for('static', filename='image/nidhi.jpg')}}" alt="Los Angeles" />
+      </div>
+
+      <div class="item">
+        <img src="{{url_for('static', filename='image/nidhi.jpg')}}" />
+      </div>
+      <div class="item active">
+        <img src="{{url_for('static', filename='image/nidhi.jpg')}}" alt="Los Angeles" />
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+{% extends "material/base.html" %}
+{% block content %}
+<!-- 
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card=title">Imput Text</span>
+          <p> kgfjfbg g gg duegj gg fuyg jgug f uy  g ygfgi g</p>
+         </div>
+         <div class="card-action">
+         <a href="#">This is link</a>
+         <a href="#">This is link</a>
+        </div>
+        </div>
+        </div>
+      </div>
+ -->
+ <div class="container-fluid">
+ <div id="section1" class="container-fluid">
+   <h6>Your Text</h6>
+
+ <!--  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment" name="age"></textarea>
+ -->  
+ 
+  <div class="form">
+    <form method="POST" action="/send">
+    <!-- <div class="form-group">
+      <input type="text" name="age">
+    </div> -->
+    <textarea class="form-control" rows="8" name="age"></textarea>
+  <input class ="btn btn-primary paddingcol" type="submit" name="submit">
+    </form>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript"></script>>
+{% endblock %} 
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+</html>
